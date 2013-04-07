@@ -1,5 +1,5 @@
 
-<div id="slider" class="grid_8">
+<div id="slider" class="grid_5 banner-box-shadow">
 <div class="flexslider">
 	<ul class="slides">
 	    <?php 	$count = of_get_option('w2f_slide_number');
@@ -19,8 +19,10 @@
 					<a href="<?php the_permalink(); ?>"><img class="slide-image " src="<?php echo $image ?>"/></a>
 				<?php endif; ?>
 
-				<div class="flex-caption">
-					<h3><?php the_title(); ?></h3>
+				<div class="flex-summary">
+					<h1><?php the_title(); ?></h1>
+					<?php print_excerpt(200); ?>		
+
 				</div>
 		<?php endwhile; endif; ?>
 

@@ -20,6 +20,7 @@ Template Name: Homepage
 get_header(); ?>
 			
 <?php get_template_part( 'slide', 'index' ); ?>
+<?php get_template_part( 'news-feed', 'index' ); ?>
 				
 <div class="clear"></div>
 

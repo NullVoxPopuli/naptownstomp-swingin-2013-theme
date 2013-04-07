@@ -1,4 +1,4 @@
-/*
+	/*
 Theme Name: NaptownStomp: SwingIN 2013
 Theme URL: http://www.fabthemes.com/rasputin/
 Description: Free WordPress theme released by fabthemes.com
@@ -101,8 +101,8 @@ textarea {
 }
 
 body{
-	/*background:#fff url(images/body.jpg) fixed;*/
-	background: rgb(53, 53, 53);
+	background: rgb(53, 53, 53) url(images/background.gif);
+	background: 
 	 min-width: 960px;
 }
 
@@ -380,7 +380,7 @@ a:active {
 {
         margin-left: auto;
         margin-right: auto;
-        width: 960px;
+        width: 940px;
 }
 
 /* =Grid >> Global
@@ -421,7 +421,7 @@ a:active {
 .container_8 .grid_5 {width: 580px;}
 .container_8 .grid_6 {width: 700px;}
 .container_8 .grid_7 {width: 820px;}
-.container_8 .grid_8 {width: 960px;}
+.container_8 .grid_8 {width: 940px;}
 
 /* =Prefix Extra Space >> 8 Columns
 --------------------------------------------------------------------------------*/
@@ -514,7 +514,7 @@ Move to separate stylesheet if invalid CSS is a problem.
 h1.site-title{
 	font-weight:600;
 	font-size:36px;
-	line-height:120px;
+	line-height:150px;
 	float: left;
 	margin-left: 25px;
 	margin-bottom: 0px;
@@ -529,7 +529,7 @@ h1.site-title a:link, h1.site-title a:visited{
 h2.site-description{
 	font-size:14px;
 	font-weight: 600;
-	line-height:100%;
+	line-height:1.3em;
 	float: right;
 	width: 160px;
 	color: white;
@@ -544,7 +544,7 @@ h2.site-description{
 header .logo {
 	position: absolute;
 	z-index: 1;
-	width: 960px;
+	width: 940px;
 }
 
 .head-banner a img{
@@ -559,7 +559,7 @@ header .logo {
 	z-index:100;
 	position:relative;
 	text-transform: uppercase;
-	width: 960px;
+	width: 940px;
 	margin: 0px;
 	}
 	
@@ -671,6 +671,10 @@ header .logo {
 /* =Content
 ----------------------------------------------- */
 
+.banner-box-shadow{
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,0.5);
+}
+
 .sticky {
 }
 .hentry {
@@ -695,6 +699,39 @@ header .logo {
 	margin: 0 0 1.5em;
 }
 
+/* = News
+----------------------------------------------- */
+.news-container{
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-left: 20px;
+	padding: 15px;
+	height: 298px;
+	background: rgb(242, 242, 242);
+	position: relative;
+}
+.news-container .news-footer{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+
+	background: #f2f2f2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f2f2f2 66%, #d0d0d0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(66%,#f2f2f2), color-stop(100%,#d0d0d0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f2f2f2 66%,#d0d0d0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f2f2f2 66%,#d0d0d0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f2f2f2 66%,#d0d0d0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f2f2f2 66%,#d0d0d0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#d0d0d0',GradientType=0 ); /* IE6-9 */
+
+}
+
+.news-container .news-footer a {
+	float: right;
+	margin-right: 15px;
+	margin-bottom: 7px;
+}
 
 /* =Asides
 ----------------------------------------------- */
