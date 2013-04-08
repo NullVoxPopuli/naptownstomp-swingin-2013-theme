@@ -1305,8 +1305,11 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 
 .twit-feed{
 	padding:20px 30px 0px 30px;
+
+	font-family: 'Kreon', sans-serif;
 	font-size:18px;
-	color:#eee;
+	font-weight:700;
+	color:#fff;
 
 }
 
@@ -1315,9 +1318,19 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 	background:url(images/twitterIcon.png) top left no-repeat;
 	border-bottom:1px solid #203A44;
 }
+.tweet .twitterHashTag,
+.tweet .twitterLink{
+	color:#fed13d;
+}
+.tweet .twitterLink{
+	text-decoration:underline;
+}
 
 .tweet_date{
-	font-size:12px;
+	font-family: 'Titillium Web', sans-serif;
+	font-size:13px;
+	font-weight:normal;
+	color:#fff;
 }
 
 /* Footer */

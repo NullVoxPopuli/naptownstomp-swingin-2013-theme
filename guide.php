@@ -43,8 +43,8 @@ function w2f_theme_guide(){
 		<p><b>Site intro title: </b> You can enter a site intro message title on the homepage via the options page. </p>
 		<p><b>Site intro text: </b>
 		You can enter a site intro message on the homepage via the options page. </p>
-		<p><b>Twitter name: </b>
-		You can enter a twitter name to show the latest twitter status above the footer. </p>
+		<p><b>Twitter HashTag: </b>
+		You can enter a twitter hashtag to show the latest twitter status above the footer. </p>
 		<p><b>Blog posts on homepage:</b>
 		You can set the number of posts to show on the homepage. </p>
 		<p><b>Header banner image:</b>
