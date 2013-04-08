@@ -8,6 +8,9 @@
 		"orderby" => "DESC"
 	);
 	$posts = get_posts( $args ); 
+	$excerpt_length = apply_filters('excerpt_length', 10);
+
+
 ?>
 
 <div class="grid_3 news-container banner-box-shadow">
@@ -24,7 +27,8 @@
 					<?php the_title(); ?>
 				</a>
 			</h3>
-			<?php the_excerpt(); ?>		
+
+			<?php print_excerpt(90); ?>		
 									
 		</div>
 
@@ -35,7 +39,8 @@
 
 	<div class="news-footer">
 		<!-- LINK TO ALL POSTS OF TYPE CATEGORY NEWS -->
-		<a href="">
+
+		<a href="/?cat=<?php echo get_category_id('news'); ?>">
 			See all the news
 		</a>
 	</div>

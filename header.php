@@ -42,6 +42,9 @@
 <![endif]-->
 
 <?php wp_head(); ?>
+
+<link href='http://fonts.googleapis.com/css?family=Kreon:400,700|Titillium+Web:400,700italic,200,600,400italic' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body <?php body_class(); ?>>

@@ -1,5 +1,5 @@
 	/*
-Theme Name: NaptownStomp: SwingIN 2013
+Theme Name: NaptownStomp: SwingIN 2013 (Based on Rasputin)
 Theme URL: http://www.fabthemes.com/rasputin/
 Description: Free WordPress theme released by fabthemes.com
 Author: Fabthemes
@@ -512,6 +512,7 @@ Move to separate stylesheet if invalid CSS is a problem.
 
 
 h1.site-title{
+	font-family: "Kreon", Helvetica, sans-serif;
 	font-weight:600;
 	font-size:36px;
 	line-height:150px;
@@ -554,8 +555,8 @@ header .logo {
 /* TOP-MENU */
 	
 #botmenu{
-	font-size: 14px;
-	background: rgb(26, 93, 145); /*url(images/menu.png)*/
+	font-size: 16px;
+	background: #1a5e90 url(images/menuBG.gif); /*url(images/menu.png)*/
 	z-index:100;
 	position:relative;
 	text-transform: uppercase;
@@ -597,13 +598,29 @@ header .logo {
 	}
 
 #submenu li a:hover, #submenu li a:active, #submenu .current_page_item a  {
+	font-size: 16px;
 	color: #fff;
-	
-	}
-	
+
+}
+#submenu li  a:hover:after, #submenu li a:active:after, #submenu .current_page_item a:after{
+    background: #e8e8e8;
+    border: solid #eee; 
+    border-width: 1px 1px 0 0; 
+    bottom: -5px;
+    content: ' '; 
+    display: block; 
+    height: 10px;
+    left: 40%;
+    position: absolute; 
+    width: 10px; 
+    z-index: 99; 
+    
+    -webkit-transform: rotate(-45deg); 
+    -webkit-transform-origin: 50% 50%; }
+
 #submenu li a.sf-with-ul {
 	padding-right: 10px;
-	}	
+}	
 	
 
 	
@@ -709,6 +726,14 @@ header .logo {
 	height: 298px;
 	background: rgb(242, 242, 242);
 	position: relative;
+	overflow: hidden;
+}
+.news-container h2{
+	font-size:30px;
+	font-weight:700;
+	color:#195d8f;
+	font-family: 'Kreon', Helvetica, sans-serif;
+
 }
 .news-container .news-footer{
 	position: absolute;
@@ -726,6 +751,28 @@ header .logo {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#d0d0d0',GradientType=0 ); /* IE6-9 */
 
 }
+.news-post{
+	font-size: 14px;
+	font-weight: normal;
+	color: gray;
+	line-height: 1em;
+}
+.news-post h3{
+	margin-bottom: 0px;
+}
+.news-post h3 a {
+	font-weight: bold;
+	font-size: 16px;
+	color: gray;
+	line-height: 1em;
+	font-family: 'Kreon', Helvetica, sans-serif;
+
+}
+
+.news-post p{
+	margin-bottom: 12px;
+}
+
 
 .news-container .news-footer a {
 	float: right;
@@ -866,6 +913,7 @@ object {
 	width:220px;
 	height:170px;
 	background:#e2e2e2;
+	box-shadow: 0px 2px 6px #989898;
 }
 .article-box:last-child{
 	margin-right: 0px;
@@ -877,17 +925,29 @@ object {
 .post-hover{
 	width:220px;
 	height:170px;
-	background:#3F9CC1;
 	position:absolute;
 	top:0px;
 	left:0px;
 	display:none;
+	overflow: hidden;
+
+background: rgb(25,93,143);
+background: -moz-linear-gradient(top,  rgba(25,93,143,0.95) 0%, rgba(25,93,143,0.42) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(25,93,143,0.95)), color-stop(100%,rgba(25,93,143,0.42))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(25,93,143,0.95) 0%,rgba(25,93,143,0.42) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(25,93,143,0.95) 0%,rgba(25,93,143,0.42) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(25,93,143,0.95) 0%,rgba(25,93,143,0.42) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(25,93,143,0.95) 0%,rgba(25,93,143,0.42) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2195d8f', endColorstr='#6b195d8f',GradientType=0 ); /* IE6-8 */
+
+
 }
 
 .post-hover h2{
 	margin:10px 20px;
-	font-size:16px;
-	font-weight:600;
+	font-family: 'Kreon', sans-serif;
+	font-size:22px;
+	font-weight:700;
 }
 
 .post-hover h2 a:link, .post-hover h2 a:visited{
@@ -896,6 +956,9 @@ object {
 
 .post-hover p{
 	margin:0px 20px;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
 	color:#fff;
 }
 
@@ -1237,7 +1300,7 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 /* Footer-widget */
 
 #bottom{
-	background: url(images/footer.png);
+	background: url(images/footer.gif);
 }
 
 .twit-feed{
@@ -1249,7 +1312,7 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 
 .tweet{
 	padding:0px 0px 20px 60px;
-	background:url(images/twit.png) top left no-repeat;
+	background:url(images/twitterIcon.png) top left no-repeat;
 	border-bottom:1px solid #203A44;
 }
 
@@ -1260,7 +1323,7 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 /* Footer */
 
 .site-footer{
-	background: url(images/footer.png);
+	background: url(images/footer.gif);
 	padding:25px;
 	text-align:center;
 	color:#eee;

@@ -16,7 +16,9 @@
 				?>
 				
 				<?php if($image) : ?>
-					<a href="<?php the_permalink(); ?>"><img class="slide-image " src="<?php echo $image ?>"/></a>
+					<a href="<?php the_permalink(); ?>">
+						<img wdith="580" height="298" class="slide-image " src="<?php echo $image ?>"/>
+					</a>
 				<?php endif; ?>
 
 				<div class="flex-summary">

@@ -28,7 +28,6 @@ function twitter_feed($user = 'twitter', $count = '3'){
 
     // Build Twitter api url
     $apiurl = "http://api.twitter.com/1/statuses/user_timeline/{$user}.json?count={$count}";
-
     // Request the API data, using the constructed URL
     $remote = wp_remote_get( esc_url( $apiurl ) );
 
@@ -41,13 +40,13 @@ function twitter_feed($user = 'twitter', $count = '3'){
     // If the API returns a server error in response, output
     // an error message indicating the server response.
     if ( '200' != $remote['response']['code'] ) {
+        echo $apiurl;
         return '<p>Twitter feed responded with an HTTP status code of ' . esc_html( $remote['response']['code'] ) . '.</p>';
     }
 
     // If the API returns a valid response, the data will be
     // json-encoded; so decode it.
     $data = json_decode( $remote['body'] );
-    
     $output = '';
     
     while ($i <= $count){
@@ -64,7 +63,7 @@ function twitter_feed($user = 'twitter', $count = '3'){
                 $feed = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $feed);
                 $feed = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $feed);
                 $feed = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $feed);
-                $output .= "<div class='tweet'>" . $feed . "<div class='tweet_date'>" . date("M - j",strtotime($data[($i-1)]->created_at)) . "</div></div>";
+                $output .= "<div class='tweet'>" . $feed . "<div class='tweet_date'>" . date("H:i A - j M y",strtotime($data[($i-1)]->created_at)) . "</div></div>";
         }
         $i++;        
     }

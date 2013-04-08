@@ -31,9 +31,12 @@ get_header(); ?>
 		<div class="article-list">
 			<?php
 
-			$count = of_get_option('w2f_blog_number','8');
+			// $count = of_get_option('w2f_blog_number','8');
 			$event_info_category_id = get_category_id('event-info');
-			$args = array( 'category' => $event_info_category_id );
+			$args = array( 
+				'category' => $event_info_category_id,
+				"numberposts" => 100
+				 );
 			$lastposts = get_posts( $args );
 			$chunks = array_chunk($lastposts, 4);
 
