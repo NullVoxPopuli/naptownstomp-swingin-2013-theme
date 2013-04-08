@@ -570,7 +570,8 @@ header .logo {
 	height:50px;
 	}
 	
-#submenu ul {
+#submenu ul, 
+#homemenu ul {
 	width: auto;
 	float:left;
 	list-style: none;
@@ -578,7 +579,8 @@ header .logo {
 	padding: 0 0px;
 	}
 	
-#submenu li {
+#submenu li,
+#homemenu li {
 	float: left;
 	list-style: none;
 	margin: 0;
@@ -683,6 +685,55 @@ header .logo {
 	position: static;
 	}
 	
+
+
+/* =Home Menu
+------------------------------------------------- */
+.home-nav {
+	display: block;
+	margin-top: 10px;
+	background: #fff;
+	/*box-shadow: 0 2px 2px 0px #444;*/
+	height:38px;
+	font-family:"Titillium Web", sans-serif;
+	color:#195d8f;
+}
+
+.home-nav span{
+	font-size:18px;
+	line-height: 38px;
+	color:#195d8f;
+	font-weight:700;
+	font-style:italic;
+	display: inline;
+	margin-left: 15px;
+	float: left;
+}
+
+#homemenu{
+	display: inline;
+}
+
+#homemenu ul li{
+	padding: 0px 10px;
+	line-height: 36px;
+}
+
+#homemenu li a{
+	font-size:17px;
+	color:#5d5d5d;
+	font-weight: 600;
+	text-shadow: none;
+}
+
+#homemenu li a:active,
+#homemenu li a:hover,
+#homemenu li.current-page a{
+	font-size:17px;
+	color:#195d8f;
+	font-weight:600;
+	text-decoration:underline;
+}
 	
 
 /* =Content

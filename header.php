@@ -66,7 +66,12 @@
 		</div>
 
 		<div id="botmenu" class="grid_8">
-			<?php wp_nav_menu( array( 'container_id' => 'submenu', 'theme_location' => 'primary','menu_id'=>'web2feel' ,'menu_class'=>'sfmenu','fallback_cb'=> 'fallbackmenu' ) ); ?>
+			<?php wp_nav_menu( array(
+				'container_id' => 'submenu',
+				'theme_location' => 'primary',
+				'menu_id'=>'web2feel',
+				'menu_class'=>'sfmenu',
+				'fallback_cb'=> 'fallbackmenu' ) ); ?>
 		</div>
 
 	</header><!-- #masthead .site-header -->

@@ -18,6 +18,18 @@ Template Name: Homepage
 
 
 get_header(); ?>
+
+
+<div class="home-nav grid_8">
+	<span>View Event Details: </span>
+	<?php wp_nav_menu( array(
+		'container_id' => 'homemenu',
+		'theme_location' => 'secondary',
+		'menu_id'=>'home-page-menu',
+		'menu_class'=>'sfmenu',
+		'fallback_cb'=> 'fallbackmenu' ) ); ?>
+</div>
+<div class="clear"></div>
 			
 <?php get_template_part( 'slide', 'index' ); ?>
 <?php get_template_part( 'news-feed', 'index' ); ?>

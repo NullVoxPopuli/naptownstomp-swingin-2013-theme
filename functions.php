@@ -78,6 +78,7 @@ function web2feel_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'web2feel' ),
+		'secondary' => __( "Home Page Menu", "home-page-menu")
 	) );
 
 	/**
