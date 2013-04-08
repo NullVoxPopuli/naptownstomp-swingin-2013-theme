@@ -999,10 +999,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2195d8f', e
 	font-family: 'Kreon', sans-serif;
 	font-size:22px;
 	font-weight:700;
+	color:#fff;
+
 }
 
 .post-hover h2 a:link, .post-hover h2 a:visited{
-	color:#fff;
 }
 
 .post-hover p{

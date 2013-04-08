@@ -66,12 +66,14 @@ get_header(); ?>
 								$image = aq_resize( $img_url, 220, 170, true ); //resize & crop the image
 							?>
 								
-							<?php if($image) : ?> <a class="sqimg" href="<?php the_permalink(); ?>"><img class="grey-img" src="<?php echo $image ?>"/></a> <?php endif; ?>
-								
-							<div class="post-hover">
-								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<?php print_excerpt(100); ?>		
-							</div>
+							<a class="sqimg" href="<?php the_permalink(); ?>">
+								<?php if($image) : ?> <img class="grey-img" src="<?php echo $image ?>"/> <?php endif; ?>
+									
+								<div class="post-hover">
+									<h2><?php the_title(); ?></h2>
+									<?php print_excerpt(100); ?>		
+								</div>
+							</a>
 									
 						</div>
 
