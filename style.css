@@ -693,7 +693,7 @@ header .logo {
 	display: block;
 	margin-top: 10px;
 	background: #fff;
-	/*box-shadow: 0 2px 2px 0px #444;*/
+	box-shadow: 0 2px 2px 0px #aaa;
 	height:38px;
 	font-family:"Titillium Web", sans-serif;
 	color:#195d8f;
