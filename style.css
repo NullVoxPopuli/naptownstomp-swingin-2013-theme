@@ -1319,19 +1319,24 @@ ol.commentlist li ul.children li.depth-2,ol.commentlist li ul.children li.depth-
 	border-bottom:1px solid #203A44;
 }
 .tweet .twitterHashTag,
-.tweet .twitterLink{
+.tweet .twitterLink,
+.tweet .tweet-author a{
 	color:#fed13d;
 }
 .tweet .twitterLink{
 	text-decoration:underline;
 }
 
-.tweet_date{
+.tweet_date, .tweet-author{
 	font-family: 'Titillium Web', sans-serif;
 	font-size:13px;
 	font-weight:normal;
 	color:#fff;
 }
+.tweet-author a{
+
+}
+
 
 /* Footer */
 

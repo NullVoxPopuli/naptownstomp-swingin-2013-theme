@@ -23,7 +23,7 @@
 		<div class="news-post">					
 			<h3>
 				<a href="<?php the_permalink(); ?>">
-					<?php the_date("d/m"); ?>
+					<?php the_date("m/d"); ?>
 					<?php the_title(); ?>
 				</a>
 			</h3>
