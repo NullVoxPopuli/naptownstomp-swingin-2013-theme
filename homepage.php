@@ -18,7 +18,38 @@ Template Name: Homepage
 
 
 get_header(); ?>
+<script type="text/javascript">
+	var $ = jQuery;
+	$(function(){
+		$("#home-page-menu a").click(function(e){
+		    e.preventDefault();
+			var self = $(this);
 
+			// hide the news and featured slider
+			$("#slider").hide();
+			$(".news-container").hide();
+
+			// filter the tiles based on category
+			var currentCategory = $.trim(self.text()).toUpperCase();
+			$("#article-area .article-box").hide().filter(function(){
+				var category = $(this).data("categories");
+				var currentCompareText = typeof(category) != "undefined" ? category : "";
+				currentCompareText = currentCompareText.toUpperCase();
+			    return currentCompareText.indexOf(currentCategory) != -1
+			}).show();
+
+			if (self.attr("href").indexOf("cat") > 0){
+				// if the link is to a category, it's because there are tiles
+				// on this page that we are going to filter from the main UI
+				return false;
+			}else{
+				// actually go to that page
+				return true;
+			}
+		});
+	});
+
+</script>
 
 <div class="home-nav grid_8">
 	<span>View Event Details: </span>
@@ -47,7 +78,10 @@ get_header(); ?>
 			$event_info_category_id = get_category_id('event-info');
 			$args = array( 
 				'category' => $event_info_category_id,
-				"numberposts" => 100
+				"numberposts" => 100,
+				"meta_key" => "event-info-order",
+				"orderby" => "meta_value",
+				"order" => "ASC"
 				 );
 			$lastposts = get_posts( $args );
 			$chunks = array_chunk($lastposts, 4);
@@ -58,13 +92,22 @@ get_header(); ?>
 
 					<?php foreach($chunk as $post) : setup_postdata($post); ?>		
 
-						<div class="article-box grid_2">
 							
-							<?php
-								$thumb = get_post_thumbnail_id();
-								$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
-								$image = aq_resize( $img_url, 220, 170, true ); //resize & crop the image
-							?>
+						<?php
+							$thumb = get_post_thumbnail_id();
+							$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
+							$image = aq_resize( $img_url, 220, 170, true ); //resize & crop the image
+
+							$categories_for_this_post = "";
+							$categories = get_the_category();
+							if($categories){
+								foreach($categories as $category) {
+									$categories_for_this_post .= $category->name . " ";
+								}
+							}
+						?>
+
+						<div class="article-box grid_2" data-categories="<?php echo $categories_for_this_post ?>">
 								
 							<a class="sqimg" href="<?php the_permalink(); ?>">
 								<?php if($image) : ?> <img class="grey-img" src="<?php echo $image ?>"/> <?php endif; ?>
