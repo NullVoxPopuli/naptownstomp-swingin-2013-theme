@@ -25,7 +25,9 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<div class="fcred">
-			Copyright &copy; <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>.<br />
+			<!-- Copyright &copy; <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>.<br /> -->
+			<a href="http://swingin.org">SwingIN</a> • <a href="http://naptownstomp.org">Naptown Stomp  Lindy Hop Society</a> • Copyright &copy; 2013<br/>
+			All Rights Reserved.  (<a href="http://www.swingin.org/privacy/">Privacy Policy</a>)<br />
 			<?php fflink(); ?> WordPress Theme: <a href="http://topwpthemes.com/<?php echo wp_get_theme(); ?>/" ><?php echo wp_get_theme(); ?></a> 	
 			</div>		
 		</div><!-- .site-info -->

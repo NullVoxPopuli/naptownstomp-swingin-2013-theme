@@ -18,10 +18,6 @@
 
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<div class="entry-meta">
-			<?php web2feel_posted_on(); ?>
-		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -55,13 +51,13 @@
 
 			} // end check for categories on this blog
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink(),
-				the_title_attribute( 'echo=0' )
-			);
+			// printf(
+			// 	$meta_text,
+			// 	$category_list,
+			// 	$tag_list,
+			// 	get_permalink(),
+			// 	the_title_attribute( 'echo=0' )
+			// );
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'web2feel' ), '<span class="edit-link">', '</span>' ); ?>
