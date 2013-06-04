@@ -147,7 +147,7 @@ function print_excerpt($length) { // Max excerpt length. Length is set in charac
 	$text = strip_shortcodes($text); // optional, recommended
 	$text = strip_tags($text); // use ' $text = strip_tags($text,'<p><a>'); ' if you want to keep some tags
 
-	$text = substr($text,0,$length);
+	$text = substr($text,0,$length) . "...";
 	$excerpt = reverse_strrchr($text, '.', 1);
 	if( $excerpt ) {
 		echo apply_filters('the_excerpt',$excerpt);

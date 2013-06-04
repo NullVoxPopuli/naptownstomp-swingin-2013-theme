@@ -14,7 +14,9 @@
 				<?php 
 					$instructor_category_id = get_category_id('Instructors');
 					$args = array(
-						"category" => $instructor_category_id
+						"category" => $instructor_category_id,
+						"numberposts" => 30,
+
 					);
 					$posts = get_posts( $args ); 
 					$excerpt_length = apply_filters('excerpt_length', 10);

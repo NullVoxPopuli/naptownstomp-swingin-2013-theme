@@ -23,7 +23,7 @@
 
 				<div class="flex-summary">
 					<h1><?php the_title(); ?></h1>
-					<?php print_excerpt(200); ?>...		
+					<?php print_excerpt(197); ?>		
 
 				</div>
 		<?php endwhile; endif; ?>

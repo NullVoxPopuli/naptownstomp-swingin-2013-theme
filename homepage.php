@@ -22,23 +22,24 @@ get_header(); ?>
 	var $ = jQuery;
 	$(function(){
 		$("#home-page-menu a").click(function(e){
-		    e.preventDefault();
 			var self = $(this);
+			if (self.attr("href").indexOf("category") > 0){
+				console.log("click");
+				e.preventDefault();
 
-			// hide the news and featured slider
-			$("#slider").hide();
-			$(".news-container").hide();
+				// hide the news and featured slider
+				$("#slider").hide();
+				$(".news-container").hide();
 
-			// filter the tiles based on category
-			var currentCategory = $.trim(self.text()).toUpperCase();
-			$("#article-area .article-box").hide().filter(function(){
-				var category = $(this).data("categories");
-				var currentCompareText = typeof(category) != "undefined" ? category : "";
-				currentCompareText = currentCompareText.toUpperCase();
-			    return currentCompareText.indexOf(currentCategory) != -1
-			}).show();
+				// filter the tiles based on category
+				var currentCategory = $.trim(self.text()).toUpperCase();
+				$("#article-area .article-box").hide().filter(function(){
+					var category = $(this).data("categories");
+					var currentCompareText = typeof(category) != "undefined" ? category : "";
+					currentCompareText = currentCompareText.toUpperCase();
+				    return currentCompareText.indexOf(currentCategory) != -1
+				}).show();
 
-			if (self.attr("href").indexOf("cat") > 0){
 				// if the link is to a category, it's because there are tiles
 				// on this page that we are going to filter from the main UI
 				return false;
