@@ -118,8 +118,8 @@ html[xmlns] .slides {display: block;}
 /* Direction Nav */
 .flex-direction-nav { height: 0; }
 .flex-direction-nav li a {width: 40px; height: 40px; margin: 0px 0 0; display: block; background: url(images/arrow.png) no-repeat; position: absolute; bottom: 0; cursor: pointer; text-indent: -999em;}
-.flex-direction-nav li .next {background-position: -40px 0; right: 260px;}
-.flex-direction-nav li .prev {right: 300px;}
+.flex-direction-nav li .next {background-position: -40px 0; right: -1px;}
+.flex-direction-nav li .prev {right: 39px;}
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */

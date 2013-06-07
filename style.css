@@ -994,13 +994,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2195d8f', e
 
 }
 
+.article-box h2,
+.post-hover h2,
 .post-hover h2{
-	margin:10px 20px;
+	position: absolute;
+	margin: 10px 20px;
 	font-family: 'Kreon', sans-serif;
-	font-size:22px;
-	font-weight:700;
-	color:#fff;
+	font-size: 22px;
+	font-weight: 700;
+	color: #fff;
+	text-shadow: 0 1px 0px black;
 
+}
+.post-hover h2 a{
+	color: white;
+}
+.post-hover h2{
+	position: relative;
+	margin-bottom: 0px;
 }
 
 .post-hover h2 a:link, .post-hover h2 a:visited{
@@ -1012,6 +1023,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2195d8f', e
 	line-height: 20px;
 	font-weight: normal;
 	color:#fff;
+	margin-top: 5px;
 }
 
 /* Articles	 */

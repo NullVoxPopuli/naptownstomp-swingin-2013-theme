@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-		<section id="primary" class="content-area container_8 cf">
+		<section id="primary" class="content-area container_6 cf">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 							if ( is_category() ) {
-								printf( __( 'Category Archives: %s', 'web2feel' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+								// printf( __( 'Category Archives: %s', 'web2feel' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 							} elseif ( is_tag() ) {
 								printf( __( 'Tag Archives: %s', 'web2feel' ), '<span>' . single_tag_title( '', false ) . '</span>' );
@@ -68,40 +68,65 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div id="article-area" class="cf ">
-				<div class="article-list">
-				
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+					<div class="article-list">
+					
+						<?php 
+							$posts;
+							if ( have_posts() ) :
+								while ( have_posts() ):
+									$p = the_post();
+									if (get_the_title($p.id) != ""):
+										array_push($posts,  $p);
+									endif;
+								endwhile;
+							endif;
+							$chunks = array_chunk($posts,  4);
 
-					<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						//get_template_part( 'content', get_post_format() );
-					?>
-					
-						
-					<div class="article-box grid_2">
-				
-					<?php
-						$thumb = get_post_thumbnail_id();
-						$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
-						$image = aq_resize( $img_url, 220, 170, true ); //resize & crop the image
-					?>
-					
-					<?php if($image) : ?> <a href="<?php the_permalink(); ?>"><img class="grey-img" src="<?php echo $image ?>"/></a> <?php endif; ?>
-					
-						<div class="post-hover">
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<?php print_excerpt(100); ?>
-						</div>
-						
+							foreach($chunks as $chunk) :
+							?>
+								<div class="article-container">
+
+							<?php
+								/* Include the Post-Format-specific template for the content.
+								 * If you want to overload this in a child theme then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								//get_template_part( 'content', get_post_format() );
+
+								foreach($chunk as $post) : setup_postdata($post);
+							?>
+							
+									
+								<div class="article-box grid_2">
+								
+									<?php
+										$thumb = get_post_thumbnail_id();
+										$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
+										$image = aq_resize( $img_url, 220, 170, true ); //resize & crop the image
+									?>
+									
+									<div class="article-box grid_2">
+										
+									<a class="sqimg" href="<?php the_permalink(); ?>">
+										<h2><?php the_title(); ?></h2>
+										<?php if($image) : ?> <img class="grey-img" src="<?php echo $image ?>"/> <?php endif; ?>
+											
+										<div class="post-hover">
+											<h2><?php the_title(); ?></h2>
+											<?php print_excerpt(100); ?>		
+										</div>
+									</a>
+											
+								</div>
+									
+								</div>
+
+								<?php endforeach ?>
+							</div>
+						<?php
+						endforeach
+						?>
 					</div>
-
-				<?php endwhile; ?>
-				
-				</div>
 				</div>
 			
 				<?php web2feel_content_nav( 'nav-below' ); ?>

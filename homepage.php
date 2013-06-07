@@ -48,6 +48,13 @@ get_header(); ?>
 				return true;
 			}
 		});
+
+		$("#home-page-menu").prepend("<li><a class='view_all'>View All</a></li>");
+		$("#home-page-menu .view_all").click(function(){
+			$("#slider").show();
+			$(".news-container").show();
+			$("#article-area .article-box").show();
+		});
 	});
 
 </script>
@@ -111,6 +118,7 @@ get_header(); ?>
 						<div class="article-box grid_2" data-categories="<?php echo $categories_for_this_post ?>">
 								
 							<a class="sqimg" href="<?php the_permalink(); ?>">
+								<h2><?php the_title(); ?></h2>
 								<?php if($image) : ?> <img class="grey-img" src="<?php echo $image ?>"/> <?php endif; ?>
 									
 								<div class="post-hover">
