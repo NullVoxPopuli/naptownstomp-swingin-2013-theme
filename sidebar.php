@@ -66,26 +66,28 @@
 
 				</aside>
 
-<!-- 
-				<aside id="search" class="widget widget_search">
-					<?php get_search_form(); ?>
-				</aside>
 
-				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', 'web2feel' ); ?></h1>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
 
-				<aside id="meta" class="widget">
-					<h1 class="widget-title"><?php _e( 'Meta', 'web2feel' ); ?></h1>
+				<?php 
+					$args = "cat=-" + $music_category_id + ",-" + $instructor_category_id + "&post_status=public";
+					$posts = query_posts( $args ); 
+					$excerpt_length = apply_filters('excerpt_length', 10);
+				?>
+				<aside>
+					<h1 class="widget-title">
+						Other Information
+					</h1>
 					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
+					<?php foreach($posts as $post) : setup_postdata($post); ?>	
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
 					</ul>
-				</aside> -->
+
+				</aside>
 
 			<?php endif; // end sidebar widget area ?>
 			<?php //get_template_part( 'sponsors' ); ?>

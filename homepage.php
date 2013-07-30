@@ -120,7 +120,10 @@ get_header(); ?>
 							<a class="sqimg" href="<?php the_permalink(); ?>">
 								<h2><?php the_title(); ?></h2>
 								<?php if($image) : ?> <img class="grey-img" src="<?php echo $image ?>"/> <?php endif; ?>
-									
+								
+								<div class="post-inactive">
+									<h2><?php the_title(); ?></h2>
+								</div>
 								<div class="post-hover">
 									<h2><?php the_title(); ?></h2>
 									<?php print_excerpt(100); ?>		

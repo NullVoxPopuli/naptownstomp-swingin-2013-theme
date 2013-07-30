@@ -14,7 +14,8 @@
 
 	<div id="bottom" >
 	<div class="twit-feed">
-		<?php get_template_part( 'twit-feed' ); ?>
+		<?php 
+		//get_template_part( 'twit-feed' ); ?>
 	</div>
 	
 	<div class="clear"> </div>
